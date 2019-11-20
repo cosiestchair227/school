@@ -1,0 +1,56 @@
+<html>
+    <head>
+    <title>Coordinates</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    
+    <script type="text/javascript" src="https://static.codehs.com/gulp/7666c7e4765f71aa338f37e94853d4cc7ed720a0/chs-js-lib/chs.js"></script>
+    
+    
+    <style>
+    canvas {
+        border: 1px solid black;
+        display: inline-block;
+        vertical-align: top;
+    }
+    pre {
+        border: 1px solid black;
+        display: inline-block;
+        width: 400px;
+        height: 500px;
+        background-color: #F5F5F5;
+    }
+    </style>
+    
+    </head>
+    
+    <body>
+    <h1>target</h1>
+    <canvas
+    width="400"
+    height="500"
+    class="codehs-editor-canvas"></canvas>
+    
+    <script>
+    window.onload = function() {
+    var rect;
+    function start(){
+        line1 = new Line(0, 250, 500, 250);
+        line2 = new Line(200, 0, 200, 500);
+        add(line1);
+        add(line2);
+        mouseMoveMethod(drawTarget);
+    }
+    function drawTarget(e) {
+        line1.setEndpoint(e.getX(), 0);
+        line1.setPosition(e.getX(), 500);
+        line2.setEndpoint(0, e.getY());
+        line2.setPosition(400, e.getY());
+    }
+        if (typeof start === 'function') {
+            start();
+        }
+    };
+</script>  
+</body>
+</html>

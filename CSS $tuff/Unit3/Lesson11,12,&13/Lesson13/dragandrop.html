@@ -1,0 +1,84 @@
+<html>
+<head>
+<title>Drag and Drop</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://static.codehs.com/gulp/7666c7e4765f71aa338f37e94853d4cc7ed720a0/chs-js-lib/chs.js"></script>
+
+
+	<style>
+canvas {
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+}
+	</style>
+
+	</head>
+
+	<body>
+	<h1>Drag and Drop</h1>
+
+
+
+	<canvas
+width="400"
+height="500"
+class="codehs-editor-canvas"></canvas>
+
+	<script>
+window.onload = function() {
+    var NUM_CIRCLES = 3;
+var RADIUS = 30;
+var circle1;
+var circle2;
+var circle3;
+function start(){
+	Circle1();
+    Circle2();
+	Circle3();
+	mouseDragMethod(Drag);
+}
+function Drag(e) {
+	console.log('e');
+    if(circle1.containsPoint(e.getX(), e.getY())) {
+		circle1.setPosition(e.getX(), e.getY());
+    }else if(circle2.containsPoint(e.getX(), e.getY())) {
+		circle2.setPosition(e.getX(), e.getY());
+    }else if(circle3.containsPoint(e.getX(), e.getY())) {
+		circle3.setPosition(e.getX(), e.getY());
+    }
+}
+function Circle1() {
+		circle1 = new Circle(RADIUS);
+		var x = Randomizer.nextInt(RADIUS, getWidth() - RADIUS);
+		var y = Randomizer.nextInt(RADIUS, getHeight() - RADIUS);
+		circle1.setPosition(x, y);
+		circle1.setColor(Randomizer.nextColor());
+		add(circle1);
+}
+function Circle2() {
+		circle2 = new Circle(RADIUS);
+		var x = Randomizer.nextInt(RADIUS, getWidth() - RADIUS);
+		var y = Randomizer.nextInt(RADIUS, getHeight() - RADIUS);
+		circle2.setPosition(x, y);
+		circle2.setColor(Randomizer.nextColor());
+		add(circle2);
+}
+function Circle3() {
+		circle3 = new Circle(RADIUS);
+		var x = Randomizer.nextInt(RADIUS, getWidth() - RADIUS);
+		var y = Randomizer.nextInt(RADIUS, getHeight() - RADIUS);
+		circle3.setPosition(x, y);
+		circle3.setColor(Randomizer.nextColor());
+		add(circle3);
+}
+    if (typeof start === 'function') {
+        start();
+    }
+};
+	</script>
+
+	</body>
+	</html>
