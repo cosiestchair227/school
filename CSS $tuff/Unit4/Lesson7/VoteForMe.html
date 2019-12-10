@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ballot</title>
+		
+		<style>
+		    ul{
+		        list-style:square;
+		    }
+		    li:hover::after{
+		        background-color:PaleGoldenRod;
+		        content:"  Pick me! Pick me!";
+		    }
+		    
+		    li:active::after{
+		        background-color: #46c70b;
+		        content: "Thank you!";
+            }
+		     #hovered:hover {
+                 font-style: italic;
+                 color:darkslategrey;
+            }
+		</style>
+	</head>
+
+	<body>
+		<h1>Cast Your Vote</h1>
+		
+		<ul>
+		    <li id='hovered'>Seong</li>
+		    <li id='hovered'>Maria</li>
+		    <li id='hovered'>Dorji</li>
+		    <li id='hovered'>Andile</li>
+		    <li id='hovered'>Shakti</li>
+		</ul>
+	</body>
+</html>

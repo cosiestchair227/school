@@ -1,0 +1,16 @@
+.header {
+    background-color: lightskyblue;
+}
+.red {
+    background: rgb(255, 73, 73);
+}
+.white {
+    background: white;
+}
+.blue {
+    background: rgb(73, 73, 255);
+}
+.rectangle {
+    width: 800px;
+    height: 150px;
+}

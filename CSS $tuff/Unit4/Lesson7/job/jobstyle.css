@@ -1,0 +1,26 @@
+h3 {
+    text-transform: uppercase;
+}
+p {
+    text-align: right;
+    font-family: arial;
+}
+
+body {
+    background-image: url(https://webdav.info.ucl.ac.be/webdav/slideshows//ingi_test/data1/images/software_engineering_and_programming_systems.jpg);
+}
+iframe {
+    height: 600px;
+    width: 100%;
+}
+.header {
+    border-style: solid;
+}
+.content {
+    height: 80%;
+    width: 70%;
+}
+
+.job-title {
+    font-weight: bold;
+    color: maroon;
