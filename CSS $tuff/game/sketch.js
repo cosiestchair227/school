@@ -1,0 +1,123 @@
+var medkit;
+var rapidfire;
+var bullet;
+var spaceship;
+var mx = 0; //medkit x
+var my = 0; //medkit y
+var rx = 900; //rapidfire x
+var ry = 0; //rapidfire y
+var bx = -100; //bullet x
+var by = 600; //bullet y
+var sx = 500; //spaceship x
+var sy = 500; //spaceship y 
+ 
+function setup(){
+	// set canvas size
+	createCanvas(1800,800);
+	background('black');
+	medkit = loadImage('/health.png');
+	rapidfire = loadImage('/rapidFire.png');
+	bullet = loadImage('/bullet.png');
+	spaceship = loadImage('/spaceship.png');
+}
+ 
+function draw(){
+	// Draws power ups and spaceship
+	background(0);
+	image(medkit, mx, my);
+	image(rapidfire, rx, ry);
+	image(bullet, bx, by);
+	image(spaceship, sx, sy);
+	move();
+	//moves spaceship with w,s,a,d
+	if (keyIsDown(87)){
+		sy = sy - 5;
+	}
+	
+	if (keyIsDown(83)){
+		sy = sy + 5;
+	}
+	
+	if (keyIsDown(65)){
+		sx = sx - 5;
+	}
+	
+	if (keyIsDown(68)){
+		sx = sx + 5;
+	}
+	//moves spaceship with arrows
+	if (keyIsDown(38)){
+		sy = sy - 5;
+	}
+	
+	if (keyIsDown(40)){
+		sy = sy + 5;
+	}
+	
+	if (keyIsDown(37)){
+		sx = sx - 5;
+	}
+	
+	if (keyIsDown(39)){
+		sx = sx + 5;
+	}
+}
+
+function move(){
+	// Moves power ups and bullet
+	mx = mx + 2;
+	my = my + 0;
+	rx = rx + 2;
+	ry = ry + 0;
+	bx = bx + 0;
+	by = by - 10;
+	
+	if(mx > 1850){
+		mx = 0;
+	}
+	
+	if(rx > 1850){
+		rx = 0;
+	}
+	
+	if(by < -50){
+		by = 600;
+		bx = -100;
+	}
+	
+	if(sy < 0){
+		sy = 0;
+		sx = sx;
+	}
+	
+	if(sy > 800){
+		sy = 800;
+		sx = sx;
+	}
+	
+	if(sx < 0){
+		sy = sy;
+		sx = 0;
+	}
+	
+	if(sy > 1800){
+		sy = sy;
+		sx = 1800;
+	}
+}
+
+function keyPressed(){
+	//shoot bullet
+	if (keyCode === 32){
+		by = sy;
+		bx = sx;
+	}
+}
+
+function start(){
+	preload();
+	setup();
+	draw();
+	keyPressed();
+}
+start();
